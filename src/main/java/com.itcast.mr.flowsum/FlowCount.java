@@ -59,6 +59,7 @@ public class FlowCount {
             }
             FlowBean flowBean = new FlowBean(sum_upFlow, sum_dFlow);
             context.write(key,flowBean);
+
         }
     }
    //com.itcast.mr.flowsum.FlowCount.java
