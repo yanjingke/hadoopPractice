@@ -45,6 +45,7 @@ public class InverIndexStepOne {
             }
             v.set(count);
             context.write(key,v);
+
         }
     }
 
