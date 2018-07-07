@@ -46,8 +46,10 @@ public class SimllFilesToSequenceFileConverter  {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(BytesWritable.class);
         job.setMapperClass(SequenceFileConverterMapper.class);
-        FileInputFormat.setInputPaths(job,new Path(args[0]));
-        FileOutputFormat.setOutputPath(job,new Path(args[1]));
+        String a=args[0];
+        String b=args[1];
+        FileInputFormat.setInputPaths(job,new Path(a));
+        FileOutputFormat.setOutputPath(job,new Path(b));
         job.waitForCompletion(true);
     }
 
