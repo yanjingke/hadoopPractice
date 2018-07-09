@@ -35,6 +35,8 @@ public class WebLogStrong {
         protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             String line=value.toString();
             WebLogStrongBen  webLogBen = WebLogParser.parser(line);
+            if (webLogBen.getRemote_addr()==""||webLogBen.getRemote_addr()==null)
+                return;
             WebLogParser.filtStaticResource(webLogBen,pages);
             k.set(webLogBen.toString());
             context.write(k,v);
@@ -50,7 +52,10 @@ public class WebLogStrong {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(NullWritable.class);
         FileInputFormat.setInputPaths(job,new Path(args[0]));
+
         FileOutputFormat.setOutputPath(job,new Path(args[1]));
+//        FileInputFormat.setInputPaths(job,new Path("/data/weblog/preprocess/input"));
+//        FileOutputFormat.setOutputPath(job,new Path("/data/weblog/preprocess/output"));
         job.setNumReduceTasks(0);
         job.waitForCompletion(true);
     }

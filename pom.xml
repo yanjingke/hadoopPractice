@@ -12,7 +12,10 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
+
             <version>2.5.1</version>
+
+
 
         </dependency>
         <dependency>
@@ -20,15 +23,11 @@
             <artifactId>hadoop-hdfs</artifactId>
             <version>2.5.1</version>
 
-
-
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
             <version>2.5.1</version>
-
-
 
         </dependency>
         <dependency>
@@ -41,8 +40,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.31</version>
-
-
 
         </dependency>
         <dependency>
@@ -57,12 +54,14 @@
                     <groupId>org.pentaho</groupId>
                 </exclusion>
             </exclusions>
+
         </dependency>
 
         <dependency>
             <groupId>org.apache.hive</groupId>
             <artifactId>hive-jdbc</artifactId>
             <version>1.2.1</version>
+
         </dependency>
 
     </dependencies>
@@ -75,7 +74,7 @@
                     <archive>
                         <manifest>
                                 <!--这里要替换成jar包main方法所在类 -->
-                            <mainClass>com.itacast.combineFile.SimllFilesToSequenceFileConverter</mainClass>
+                            <mainClass>com.itacast.weblogwashstrong.WebLogStrong</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
